@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - micro_message@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="micro_message">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="bbs"/>
+    <schema id="3" name="bookstore"/>
+    <schema id="4" name="cart"/>
+    <schema id="5" name="hibernate"/>
+    <schema id="6" name="information_schema"/>
+    <schema id="7" name="mysql"/>
+    <schema id="8" name="performance_schema"/>
+    <schema id="9" name="sys"/>
+    <table id="10" parent="1" name="message"/>
+    <column id="11" parent="10" name="ID">
+      <comment>主键</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="12" parent="10" name="COMMAND">
+      <comment>指令名称</comment>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <column id="13" parent="10" name="DESCRIPTION">
+      <comment>描述</comment>
+      <data-type>varchar(32)|0</data-type>
+    </column>
+    <column id="14" parent="10" name="CONTENT">
+      <comment>内容</comment>
+      <data-type>varchar(2048)|0</data-type>
+    </column>
+    <key id="15" parent="10" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
