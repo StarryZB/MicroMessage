@@ -70,7 +70,7 @@
 									<td><%= message.getDescription()%></td>
 									<td>
 										<a href="#">修改</a>&nbsp;&nbsp;&nbsp;
-										<a href="#">删除</a>
+										<a href="<%=basepath%>DeleteOne.action?id=<%=message.getId()%>">删除</a>
 									</td>
 								</tr>
 								<%

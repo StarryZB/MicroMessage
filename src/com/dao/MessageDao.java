@@ -58,4 +58,20 @@ public class MessageDao {
 //        }
         return messageList;
     }
+
+    public void deleteOne(int id) {
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlSession();
+            sqlSession.delete("Message.deleteOne",id);
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
 }
