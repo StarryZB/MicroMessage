@@ -39,4 +39,8 @@
     DELETE FROM message WHERE ID = #{_parameter}
   </delete>
 
+  <delete id="deleteBatch" parameterType="java.util.List">
+    DELETE FROM message WHERE ID IN (<foreach collection="list" item="item" separator=",">#{item}</foreach> )
+  </delete>
+
 </mapper>

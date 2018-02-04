@@ -12,13 +12,15 @@
 		<meta http-equiv="X-UA-Compatible"content="IE=9; IE=8; IE=7; IE=EDGE" />
 		<title>内容列表页面</title>
 		<link href="<%= basepath %>resources/css/all.css" rel="stylesheet" type="text/css" />
+		<script src="<%= basepath %>resources/js/common/jquery-1.8.0.min.js"></script>
+		<script src="<%= basepath %>resources/js/back/list.js"></script>
 	</head>
 	<body style="background: #e1e9eb;">
 		<form action="List.action" id="mainForm" method="post">
 			<div class="right">
 				<div class="current">当前位置：<a href="javascript:void(0)" style="color:#6E6E6E;">内容管理</a> &gt; 内容列表</div>
 				<div class="rightCont">
-					<p class="g_title fix">内容列表 <a class="btn03" href="#">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn03" href="#">删 除</a></p>
+					<p class="g_title fix">内容列表 <a class="btn03" href="#">新 增</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn03" href="javascript:deleteBatch('<%=basepath%>');">删 除</a></p>
 					<table class="tab1">
 						<tbody>
 							<tr>
@@ -64,7 +66,7 @@
 								<%
 									}
 								%>
-									<td><input type="checkbox" /></td>
+									<td><input type="checkbox" name="id" value="<%=message.getId()%>"/></td>
 									<td><%= status%></td>
 									<td><%= message.getCommand()%></td>
 									<td><%= message.getDescription()%></td>
@@ -80,7 +82,7 @@
 							</tbody>
 						</table>
 						<div class='page fix'>
-							共 <b>4</b> 条
+							共 <b><%=messageList.size()%></b> 条
 							<a href='###' class='first'>首页</a>
 							<a href='###' class='pre'>上一页</a>
 							当前第<span>1/1</span>页
