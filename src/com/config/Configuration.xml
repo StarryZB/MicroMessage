@@ -44,8 +44,8 @@
     </environment>
   </environments>
 
-  <!--<mappers>-->
-    <!--<mapper resource="org/apache/ibatis/submitted/complex_property/User.xml"/>-->
-  <!--</mappers>-->
+  <mappers>
+    <mapper resource="com/config/sqlxml/Message.xml"/>
+  </mappers>
 
 </configuration>
