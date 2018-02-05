@@ -1,6 +1,5 @@
 package com.servlet;
 
-import com.bean.Message;
 import com.service.ListService;
 
 import javax.servlet.ServletException;
